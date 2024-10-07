@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
 import { assets } from '../assets/assets_frontend/assets'
+import RelatedDoctors from '../Components/RelatedDoctors'
 
 const Appointment = () => {
 
@@ -40,6 +41,7 @@ const Appointment = () => {
       }else{
         currentDate.setHours(10)
         currentDate.setMinutes(0)
+
       }
        
       let timeSlots=[]
@@ -147,6 +149,8 @@ const Appointment = () => {
         </button>
 
       </div>
+      {/*listing*/}
+      <RelatedDoctors docId={docId} speciality={docInfo.speciality}/>
 
 
 
